@@ -1,14 +1,14 @@
+$(document).ready(function(){
 
-var btn = document.getElementById("go-button");
-function buttonClicked() {
+  var el = document.getElementById('text');
 
-    console.log("button clicked");
-    btn.removeEventListener("click",buttonClicked);
-    document.getElementById("text").innerHTML = "button clicked"
-}
+  console.log("EL in Vanilla JS:", el);
 
 
+  console.log("EL in jQuery:", $(el));
 
 
-
-btn.addEventListener("click",buttonClicked);
+  $('#go-button').on('mouseover', function(){
+    console.log("Fantistic Job");
+  });
+});
