@@ -1,14 +1,25 @@
 $(document).ready(function(){
 
-  var el = document.getElementById('text');
 
-  console.log("EL in Vanilla JS:", el);
+  $('[data-trigger="dropdown"]').on('mouseenter',function(){
 
+    var sub = $(this).parent().find('.submenu');
+    sub.addClass('active');
 
-  console.log("EL in jQuery:", $(el));
-
-
-  $('#go-button').on('mouseover', function(){
-    console.log("Fantistic Job");
   });
+  $('[data-trigger="dropdown"]').on('mouseleave',function(){
+    var sub = $(this).parent().find('.submenu');
+    if($(this).mouseenter('.submenu')){
+
+    }
+    else {
+      sub.removeClass('active');
+    }
+
+      // var sub = $(this).parent().find('.submenu');
+      // sub.removeClass('active');
+
+  });
+
+
 });
