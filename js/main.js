@@ -3,23 +3,16 @@ $(document).ready(function(){
 
   $('[data-trigger="dropdown"]').on('mouseenter',function(){
 
-    var sub = $(this).parent().find('.submenu');
-    sub.addClass('active');
+    var submenu = $(this).parent().find('.submenu');
+      console.log(submenu);
+      submenu.fadeIn(300);
 
+      $('.profile-menu').on('mouseleave', function(){
+          submenu.fadeOut(300);
+      })
   });
-  $('[data-trigger="dropdown"]').on('mouseleave',function(){
-    var sub = $(this).parent().find('.submenu');
-    if($(this).mouseenter('.submenu')){
 
-    }
-    else {
-      sub.removeClass('active');
-    }
 
-      // var sub = $(this).parent().find('.submenu');
-      // sub.removeClass('active');
-
-  });
 
 
 });
