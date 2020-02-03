@@ -13,13 +13,14 @@ $(document).ready(function(){
     event.preventDefault();
     if(event.which == 3) {
 
-        $('.hidden').removeClass('shown');
+        $('.hidden').hide();
+
 
         if($(event.target).is('img')){
-          $('.saveimg, .newtab').addClass('shown');
+          $('.saveimg, .newtab').show();
         }
         else if($(event.target).is('a')){
-          $('.newtab').addClass('shown');
+          $('.newtab').show();
         }
 
         console.log(event.pageX,event.pageY);
