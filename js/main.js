@@ -1,3 +1,4 @@
+
 $(document).ready(function(){
 
   // $('[href="https://google.com"]').on('click', function(event) {
@@ -5,38 +6,41 @@ $(document).ready(function(){
   //     event.preventDefault();
   // })
 
+  console.log($('.submenu a').first().text());
+  console.log($('.submenu a').last().text());
+
   $(document).on('contextmenu',  function() {
     return false;
   })
 
-  $(document).on('mousedown',  function(event) {
-    event.preventDefault();
-    if(event.which == 3) {
-
-        $('.hidden').hide();
-
-
-        if($(event.target).is('img')){
-          $('.saveimg, .newtab').show();
-        }
-        else if($(event.target).is('a')){
-          $('.newtab').show();
-        }
-
-        console.log(event.pageX,event.pageY);
-
-        $('#context').css({
-          top: event.pageY,
-          left: event.pageX
-        });
-
-        $('#context').fadeIn();
-      return false;
-    }
-    $('#context').fadeOut();
-
-
-  });
+  // $(document).on('mousedown',  function(event) {
+  //   event.preventDefault();
+  //   if(event.which == 3) {
+  //
+  //       $('.hidden').hide();
+  //
+  //
+  //       if($(event.target).is('img')){
+  //         $('.saveimg, .newtab').show();
+  //       }
+  //       else if($(event.target).is('a')){
+  //         $('.newtab').show();
+  //       }
+  //
+  //       console.log(event.pageX,event.pageY);
+  //
+  //       $('#context').css({
+  //         top: event.pageY,
+  //         left: event.pageX
+  //       });
+  //
+  //       $('#context').fadeIn();
+  //     return false;
+  //   }
+  //   $('#context').fadeOut();
+  //
+  //
+  // });
 
   $('[data-trigger="dropdown"]').on('mouseenter',function(){
 
@@ -69,5 +73,23 @@ $(document).ready(function(){
   })
 
 
+  $('textarea').focusin(function (){
+    console.log("Focused in the testarea");
+  });
+
+  window.passed = 0;
+
+  $('input[name=email]').on('keyup', function() {
+      console.log("keyup");
+    // if($(this).val().indexOf('0') > -1) {
+    //   passed++;
+    //
+    //   if($(this).val().indexOf('.') > -1) {
+    //     passed++;
+    //   }
+    // }
+
+
+  });
 
 });
