@@ -77,19 +77,36 @@ $(document).ready(function(){
     console.log("Focused in the testarea");
   });
 
-  window.passed = 0;
-
-  $('input[name=email]').on('keyup', function() {
-      console.log("keyup");
-    // if($(this).val().indexOf('0') > -1) {
-    //   passed++;
-    //
-    //   if($(this).val().indexOf('.') > -1) {
-    //     passed++;
-    //   }
-    // }
-
-
+  $('input').focusout(function(){
+    if($(this).val().indexOf('@') > -1 && $(this).val().indexOf('.') > -1){
+          $('.status').html('VALID');
+        }else {
+          $('.status').html('INVALID');
+        }
   });
+
+
+  // window.passed = 0;
+  // window.hasAT = 0;
+  // window.hasDot = 0;
+  //
+  // $('input[name=email]').on('keyup', function() {
+  //   if($(this).val().indexOf('@') > -1) {
+  //     hasAT++;
+  //
+  //     if($(this).val().indexOf('.') > -1) {
+  //       hasDot++;
+  //     }
+  //   }
+  //
+  //   if((window.hasAT > 0) && (window.hasDot > 0)) {
+  //     $('.status').html('VALID');
+  //   }else {
+  //     $('.status').html('INVALID');
+  //   }
+  //
+  //
+  //
+  // });
 
 });
